@@ -6,7 +6,7 @@ RUN curl -L -o /tmp/go.sh https://install.direct/go.sh
 RUN chmod +x /tmp/go.sh
 RUN /tmp/go.sh
 
-FROM alpine:latest
+FROM ubuntu:latest
 
 LABEL maintainer "Darian Raymond <admin@v2ray.com>"
 
