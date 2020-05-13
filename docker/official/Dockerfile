@@ -6,7 +6,7 @@ RUN curl -L -o /tmp/go.sh https://install.direct/go.sh
 RUN chmod +x /tmp/go.sh
 RUN /tmp/go.sh
 
-FROM alpha:latest
+FROM ubuntu:latest
 
 LABEL maintainer "Darian Raymond <admin@v2ray.com>"
 
@@ -17,7 +17,7 @@ COPY --from=builder /usr/bin/v2ray/geosite.dat /usr/bin/v2ray/
 COPY config.json /etc/v2ray/config.json
 
 RUN set -ex && \
-    apk --no-cache add ca-certificates && \
+    # apk --no-cache add ca-certificates && \
     mkdir /var/log/v2ray/ &&\
     chmod +x /usr/bin/v2ray/v2ctl && \
     chmod +x /usr/bin/v2ray/v2ray
